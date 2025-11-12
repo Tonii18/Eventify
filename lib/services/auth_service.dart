@@ -1,6 +1,6 @@
 import 'dart:convert';
-
 import 'package:eventify/models/user_model.dart';
+import 'package:eventify/services/token_service.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
@@ -28,7 +28,7 @@ class AuthService {
       return UserModel.fromJson(jsonResponse['data']);
     } else {
       logger.e('Register failed: ${jsonResponse['message']}');
-  return null;
+      return null;
     }
   }
 
@@ -43,10 +43,22 @@ class AuthService {
     final jsonResponse = jsonDecode(response.body);
 
     if (response.statusCode == 200 && jsonResponse['success'] == true) {
-      return UserModel.fromJson(jsonResponse['data']);
+      final data = jsonResponse['data'];
+      final token = data['token'];
+
+      await TokenService.saveToken(token);
+
+      return UserModel.fromJson(data);
     } else {
       logger.e('Login failed: ${jsonResponse['data']['error']}');
       return null;
     }
   }
+
+  //Service Logout
+  Future<void> logout() async {
+    await TokenService.deleteToken();
+    logger.i('Token eliminado. Sesión cerrada.');
+  }
+
 }
