@@ -15,7 +15,7 @@ class UserService {
 
     final response = await http.get(
       Uri.parse('${baseURL}users'),
-      headers: {'Accpet': 'application/json', 'Authorization': 'Bearer $token'},
+      headers: {'Accept': 'application/json', 'Authorization': 'Bearer $token'},
     );
 
     final jsonResponse = jsonDecode(response.body);
@@ -25,7 +25,7 @@ class UserService {
           .toList();
       return users;
     } else {
-      logger.e('Error obteniendo los usuarios: ${jsonResponse['menssage']}');
+      logger.e('Error obteniendo los usuarios: ${jsonResponse['message']}');
       return [];
     }
   }
@@ -35,7 +35,7 @@ class UserService {
 
     final response = await http.post(
       Uri.parse('${baseURL}activate'),
-      headers: {'Accpet': 'application/json', 'Authorization': 'Bearer $token'},
+      headers: {'Accept': 'application/json', 'Authorization': 'Bearer $token'},
       body: {'id': id.toString()},
     );
 
@@ -53,7 +53,7 @@ class UserService {
 
     final response = await http.post(
       Uri.parse('${baseURL}deactivate'),
-      headers: {'Accpet': 'application/json', 'Authorization': 'Bearer $token'},
+      headers: {'Accept': 'application/json', 'Authorization': 'Bearer $token'},
       body: {'id': id.toString()},
     );
 
@@ -71,7 +71,7 @@ class UserService {
 
     final response = await http.post(
       Uri.parse('${baseURL}deleteUser'),
-      headers: {'Accpet': 'application/json', 'Authorization': 'Bearer $token'},
+      headers: {'Accept': 'application/json', 'Authorization': 'Bearer $token'},
       body: {'id': id.toString()},
     );
 
@@ -89,7 +89,7 @@ class UserService {
 
     final response = await http.post(
       Uri.parse('${baseURL}updateUser'),
-      headers: {'Accpet': 'application/json', 'Authorization': 'Bearer $token'},
+      headers: {'Accept': 'application/json', 'Authorization': 'Bearer $token'},
       body: {'id': id.toString(), 'name': newName},
     );
 
@@ -101,6 +101,6 @@ class UserService {
       return true;
     }
   }
-  //Service User
-  //Service Organizer
+  // TODO: Service User
+  // TODO: Service Organizer
 }
