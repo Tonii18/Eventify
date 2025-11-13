@@ -17,8 +17,8 @@ class AuthService {
       body: {
         'name': userModel.name,
         'email': userModel.email,
-        'password': userModel.password!,
-        'c_password': userModel.password!,
+        'password': userModel.password,
+        'c_password': userModel.password,
         'role': userModel.role,
       },
     );
