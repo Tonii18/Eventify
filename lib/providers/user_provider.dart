@@ -14,7 +14,7 @@ class UserProvider extends ChangeNotifier {
 
   // Admin Provider
   
-  Future<bool> loadUser() async {
+  Future<bool> loadUsers() async {
     _isLoading = true;
     notifyListeners();
 

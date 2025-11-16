@@ -1,3 +1,4 @@
+import 'package:eventify/views/admin/admin_user_managment.dart';
 import 'package:flutter/material.dart';
 
 class ViewUsersButton extends StatefulWidget {
@@ -20,13 +21,17 @@ class _ViewUsersButtonState extends State<ViewUsersButton> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-
       width: widget.width * 0.80,
       height: widget.height * 0.08,
 
       child: TextButton(
         onPressed: () {
-          
+          setState(() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AdminUserManagment()),
+            );
+          });
         },
         style: TextButton.styleFrom(
           backgroundColor: const Color.fromRGBO(97, 92, 233, 1.0),
