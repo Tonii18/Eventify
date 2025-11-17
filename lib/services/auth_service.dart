@@ -36,7 +36,6 @@ class AuthService {
 
   Future<UserModel?> loginUser(String email, String password) async {
     try {
-      // Limpia espacios por si acaso
       email = email.trim();
       password = password.trim();
 
@@ -50,6 +49,7 @@ class AuthService {
       );
 
       final jsonResponse = jsonDecode(response.body);
+      print(jsonResponse);
 
       if (response.statusCode == 200 && jsonResponse['success'] == true) {
         final data = jsonResponse['data'];
@@ -70,7 +70,7 @@ class AuthService {
   }
 
   // Service Logout
-  
+
   Future<void> logout() async {
     await TokenService.deleteToken();
     logger.i('Token eliminado. Sesión cerrada.');

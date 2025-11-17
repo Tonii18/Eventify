@@ -1,3 +1,4 @@
+import 'package:eventify/config/theme.dart';
 import 'package:flutter/material.dart';
 
 class VerificationHeader extends StatelessWidget {
@@ -16,7 +17,7 @@ class VerificationHeader extends StatelessWidget {
             style: TextStyle(
               fontSize: 35 * scale,
               fontWeight: FontWeight.w900,
-              color: Color.fromRGBO(97, 92, 233, 1.0)
+              color: AppColors.primaryPurple
             ),
           ),
 
@@ -25,7 +26,7 @@ class VerificationHeader extends StatelessWidget {
             style: TextStyle(
               fontSize: 35 * scale,
               fontWeight: FontWeight.w900,
-              color: Color.fromRGBO(252, 149, 54, 1.0)
+              color: AppColors.primaryOrange
             ),
           ),
 
@@ -37,7 +38,20 @@ class VerificationHeader extends StatelessWidget {
             'lib/assets/images/verify_email.png',
             width: 280 * scale,
             height: 340 * scale,
-          )
+          ),
+
+          SizedBox(height: 10 * scale),
+
+          Text(
+            'Se te ha enviado un correo de verificación. \nVerifica tu correo y espera a que el Administrador te active',
+            style: TextStyle(
+              fontSize: 20 * scale,
+              fontWeight: FontWeight.w100,
+              color: AppColors.darkBlue
+            ),
+          ),
+
+          SizedBox(height: 10 * scale),
         ],
       ),
     );

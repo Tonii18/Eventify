@@ -1,5 +1,5 @@
+import 'package:eventify/config/theme.dart';
 import 'package:eventify/providers/user_provider.dart';
-import 'package:eventify/views/admin/admin_edit_user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
@@ -54,14 +54,14 @@ class _ViewUsersTable extends State<ViewUsersTable> {
                     SlidableAction(
                       onPressed: (_) async =>
                           await userProvider.activateUser(user.id!),
-                      backgroundColor: Colors.greenAccent,
+                      backgroundColor: AppColors.greenAccent,
                       icon: Icons.check,
                       label: 'Activar',
                     ),
                     SlidableAction(
                       onPressed: (_) async =>
                           await userProvider.deactivateUser(user.id!),
-                      backgroundColor: Colors.orangeAccent,
+                      backgroundColor: AppColors.orangeAccent,
                       icon: Icons.block,
                       label: 'Desactivar',
                     ),
@@ -83,7 +83,7 @@ class _ViewUsersTable extends State<ViewUsersTable> {
                                 onPressed: () => Navigator.pop(context, true),
                                 child: const Text(
                                   'Eliminar',
-                                  style: TextStyle(color: Colors.redAccent),
+                                  style: TextStyle(color: AppColors.redAccent),
                                 ),
                               ),
                             ],
@@ -93,7 +93,7 @@ class _ViewUsersTable extends State<ViewUsersTable> {
                           await userProvider.deleteUser(user.id!);
                         }
                       },
-                      backgroundColor: Colors.red,
+                      backgroundColor: AppColors.redAccent,
                       icon: Icons.delete,
                       label: 'Eliminar',
                     ),
@@ -107,14 +107,14 @@ class _ViewUsersTable extends State<ViewUsersTable> {
                   ),
 
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.white,
                     borderRadius: BorderRadius.circular(20),
                   ),
 
                   child: ListTile(
                     leading: Icon(Icons.account_circle_rounded),
 
-                    iconColor: Color.fromRGBO(97, 92, 233, 1.0),
+                    iconColor: AppColors.primaryPurple,
 
                     title: Text(
                       user.name,
@@ -129,8 +129,8 @@ class _ViewUsersTable extends State<ViewUsersTable> {
                         Icon(
                           user.actived == 1 ? Icons.check_circle : Icons.cancel,
                           color: user.actived == 1
-                              ? Colors.greenAccent
-                              : Colors.redAccent,
+                              ? AppColors.greenAccent
+                              : AppColors.redAccent,
                         ),
 
                         IconButton(
@@ -138,7 +138,7 @@ class _ViewUsersTable extends State<ViewUsersTable> {
                             _editUserName(context, userProvider, user);
                           },
                           icon: Icon(Icons.edit_note_sharp),
-                          color: Color.fromRGBO(63, 61, 86, 1.0),
+                          color: AppColors.darkBlue,
                           iconSize: 35 * scale,
                         ),
                       ],

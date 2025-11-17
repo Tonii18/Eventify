@@ -1,3 +1,4 @@
+import 'package:eventify/config/theme.dart';
 import 'package:eventify/views/register/register_page.dart';
 import 'package:flutter/material.dart';
 
@@ -30,14 +31,14 @@ class _LoginFooter extends State<LoginFooter> {
             child: Divider(
               height: 20,
               thickness: 1,
-              color: Color.fromRGBO(63, 61, 86, 0.5),
+              color: AppColors.darkBlue
             ),
           ),
 
           Text(
             '¿No tienes cuenta?',
             style: TextStyle(
-              color: Color.fromRGBO(97, 92, 233, 1.0),
+              color: AppColors.primaryPurple,
               fontSize: widget.scale * 15
             ),
           ),
@@ -54,7 +55,7 @@ class _LoginFooter extends State<LoginFooter> {
             child: Text(
               'Regístrate',
               style: TextStyle(
-                color: Color.fromRGBO(252, 149, 54, 1.0),
+                color: AppColors.primaryOrange,
                 fontSize: 18 * widget.scale,
                 fontWeight: FontWeight.w900
               ),

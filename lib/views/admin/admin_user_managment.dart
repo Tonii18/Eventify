@@ -1,3 +1,4 @@
+import 'package:eventify/config/theme.dart';
 import 'package:eventify/views/admin/components/user_managment_header.dart';
 import 'package:eventify/views/admin/components/view_users_table.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class _AdminUserManagment extends State<AdminUserManagment> {
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: Color.fromRGBO(240, 240, 240, 1),
+      backgroundColor: AppColors.greyBackground,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

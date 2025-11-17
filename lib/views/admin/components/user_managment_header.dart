@@ -1,3 +1,4 @@
+import 'package:eventify/config/theme.dart';
 import 'package:flutter/material.dart';
 
 class UserManagmentHeader extends StatefulWidget {
@@ -23,7 +24,7 @@ class _UserManagmentHeader extends State<UserManagmentHeader> {
                 Navigator.pop(context);
               },
               icon: Icon(Icons.arrow_back),
-              color: Color.fromRGBO(63, 61, 86, 1.0),
+              color: AppColors.darkBlue,
               iconSize: (widget.scale * 35),
             ),
             Flexible(
@@ -35,7 +36,7 @@ class _UserManagmentHeader extends State<UserManagmentHeader> {
                   style: TextStyle(
                     fontSize: (widget.scale * 30),
                     fontWeight: FontWeight.w900,
-                    color: Color.fromRGBO(63, 61, 86, 1.0),
+                    color: AppColors.darkBlue,
                   ),
                 ),
               ),

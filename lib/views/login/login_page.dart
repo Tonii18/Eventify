@@ -1,5 +1,5 @@
-import 'package:eventify/providers/auth_provider.dart';
-import 'package:eventify/views/admin/admin_menu.dart';
+import 'package:eventify/config/theme.dart';
+import 'package:eventify/functions/login/login_functions.dart';
 import 'package:eventify/views/login/components/login_footer.dart';
 import 'package:eventify/views/login/components/login_header.dart';
 import 'package:eventify/views/widgets/elevated_button.dart';
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: (size.width * 0.75), 
                 borderRadius: 15, 
                 label: 'Correo electrónico', 
-                color: Color.fromRGBO(180, 180, 180, 1.0), 
+                color: AppColors.lightGrey, 
                 isPassword: false,
                 textController: emailController,
               ),
@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: (size.width * 0.75), 
                 borderRadius: 15, 
                 label: 'Contraseña', 
-                color: Color.fromRGBO(180, 180, 180, 1.0),
+                color: AppColors.lightGrey,
                 isPassword: true,
                 textController: passwordController,
               ),
@@ -75,17 +75,20 @@ class _LoginPageState extends State<LoginPage> {
                 scale: scale, 
                 borderRadius: 15, 
                 text: 'Iniciar sesion', 
-                textColor: Colors.white, 
+                textColor: AppColors.white, 
                 fontSize: (20 * scale), 
                 fontWeight: FontWeight.w900,
                 colorGradient: [
-                  Color.fromRGBO(97, 92, 233, 1.0),
-                  Color.fromRGBO(55, 52, 131, 1.0)
+                  AppColors.primaryPurple,
+                  AppColors.secondaryPurple
                 ],
                 onPressed: (){
-                  setState(() {
-                    loginUser();
-                  });
+                  LoginFunctions loginFunctions = LoginFunctions();
+                  loginFunctions.loginUser(
+                    emailController.text, 
+                    passwordController.text, 
+                    context
+                  );
                 },
               ),
 
@@ -104,22 +107,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  Future<void> loginUser() async {
-    String email = emailController.text;
-    String password = passwordController.text;
-
-    AuthProvider authProvider = AuthProvider();
-    
-    if(await authProvider.login(email, password)){
-      if(authProvider.user?.role == 'a'){
-        Navigator.push(context,MaterialPageRoute(builder: (context) => AdminMenu()));
-      }else if(authProvider.user?.role == 'u'){
-        if(authProvider.user?.emailVerifiedAt != null && authProvider.user?.actived == 1){
-          // Redirect to user home
-        }
-      }
-    }
-  }
-
 }

@@ -1,3 +1,4 @@
+import 'package:eventify/config/theme.dart';
 import 'package:flutter/material.dart';
 
 class AdminMenuHeader extends StatefulWidget {
@@ -19,7 +20,7 @@ class _AdminMenuHeaderState extends State<AdminMenuHeader> {
       width: widget.width * 0.80,
       height: widget.height * 0.15,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(20),
       ),
 
@@ -43,7 +44,7 @@ class _AdminMenuHeaderState extends State<AdminMenuHeader> {
                   style: TextStyle(
                     fontSize: 25 * widget.scale,
                     fontWeight: FontWeight.w900,
-                    color: Color.fromRGBO(63, 61, 86, 1.0),
+                    color: AppColors.darkBlue,
                   ),
                 ),
 
@@ -52,7 +53,7 @@ class _AdminMenuHeaderState extends State<AdminMenuHeader> {
                   style: TextStyle(
                     fontSize: 15 * widget.scale,
                     fontWeight: FontWeight.w100,
-                    color: Color.fromRGBO(63, 61, 86, 1.0),
+                    color: AppColors.darkBlue,
                   ),
                 ),
               ],
@@ -61,7 +62,7 @@ class _AdminMenuHeaderState extends State<AdminMenuHeader> {
             IconButton(
               onPressed: () {},
               icon: Icon(Icons.settings_outlined),
-              color: Color.fromRGBO(63, 61, 86, 1.0),
+              color: AppColors.darkBlue,
               iconSize: widget.scale * 40,
             ),
           ],

@@ -1,3 +1,4 @@
+import 'package:eventify/config/theme.dart';
 import 'package:flutter/material.dart';
 
 class LoginHeader extends StatelessWidget{
@@ -17,7 +18,7 @@ class LoginHeader extends StatelessWidget{
             style: TextStyle(
               fontSize: 35 * scale,
               fontWeight: FontWeight.w900,
-              color: Color.fromRGBO(97, 92, 233, 1.0)
+              color: AppColors.primaryPurple
             ),
           ),
 
@@ -26,7 +27,7 @@ class LoginHeader extends StatelessWidget{
             style: TextStyle(
               fontSize: 35 * scale,
               fontWeight: FontWeight.w900,
-              color: Color.fromRGBO(252, 149, 54, 1.0)
+              color: AppColors.primaryOrange
             ),
           ),
 

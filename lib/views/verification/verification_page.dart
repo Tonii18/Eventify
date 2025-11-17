@@ -1,3 +1,4 @@
+import 'package:eventify/config/theme.dart';
 import 'package:eventify/views/login/login_page.dart';
 import 'package:eventify/views/verification/components/verification_header.dart';
 import 'package:eventify/views/widgets/elevated_button.dart';
@@ -36,8 +37,8 @@ class _VerificationPageState extends State<VerificationPage> {
                 text: 'Volver a inicio',
                 textColor: Colors.white,
                 colorGradient: [
-                  Color.fromRGBO(97, 92, 233, 1.0),
-                  Color.fromRGBO(55, 52, 131, 1.0),
+                  AppColors.primaryPurple,
+                  AppColors.secondaryPurple,
                 ],
                 fontSize: (20 * scale),
                 fontWeight: FontWeight.w900,

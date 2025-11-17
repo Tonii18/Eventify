@@ -1,5 +1,5 @@
+import 'package:eventify/config/theme.dart';
 import 'package:eventify/providers/auth_provider.dart';
-import 'package:eventify/views/register/components/register_header.dart';
 import 'package:eventify/views/verification/verification_page.dart';
 import 'package:eventify/views/widgets/back_header.dart';
 import 'package:eventify/views/widgets/elevated_button.dart';
@@ -21,8 +21,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController =
-      TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
   String selectedRol = '';
 
   @override
@@ -41,7 +40,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
             // This CHILDREN ARRAY contains every components
             children: [
-              BackHeader(scale: scale, title: 'Crea tu cuenta', color: Color.fromRGBO(97, 92, 233, 1.0),),
+              BackHeader(scale: scale, title: 'Crea tu cuenta', color: AppColors.primaryPurple,),
 
               SizedBox(height: 16 * scale),
 
@@ -59,7 +58,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 width: size.width * 0.75,
                 borderRadius: 15,
                 label: 'Nombre de usuario',
-                color: Color.fromRGBO(180, 180, 180, 1.0),
+                color: AppColors.lightGrey,
                 isPassword: false,
                 textController: nameController,
               ),
@@ -70,7 +69,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 width: size.width * 0.75,
                 borderRadius: 15,
                 label: 'Correo electrónico',
-                color: Color.fromRGBO(180, 180, 180, 1.0),
+                color: AppColors.lightGrey,
                 isPassword: false,
                 textController: emailController,
               ),
@@ -81,7 +80,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 width: size.width * 0.75,
                 borderRadius: 15,
                 label: 'Contraseña',
-                color: Color.fromRGBO(180, 180, 180, 1.0),
+                color: AppColors.lightGrey,
                 isPassword: true,
                 textController: passwordController,
               ),
@@ -92,7 +91,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 width: size.width * 0.75,
                 borderRadius: 15,
                 label: 'Confirmar contraseña',
-                color: Color.fromRGBO(180, 180, 180, 1.0),
+                color: AppColors.lightGrey,
                 isPassword: true,
                 textController: confirmPasswordController,
               ),
@@ -107,11 +106,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   decoration: InputDecoration(
                     labelText: 'Selecciona tu rol',
                     labelStyle: TextStyle(
-                      color: Color.fromRGBO(180, 180, 180, 1.0),
+                      color: AppColors.lightGrey,
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color.fromRGBO(180, 180, 180, 1.0),
+                        color: AppColors.lightGrey,
                       ),
                     ),
                     border: OutlineInputBorder(
@@ -145,12 +144,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 scale: scale,
                 borderRadius: 15,
                 text: 'Crear cuenta',
-                textColor: Colors.white,
+                textColor: AppColors.white,
                 fontSize: (scale * 20),
                 fontWeight: FontWeight.w900,
                 colorGradient: [
-                  Color.fromRGBO(97, 92, 233, 1.0),
-                  Color.fromRGBO(55, 52, 131, 1.0),
+                  AppColors.primaryPurple,
+                  AppColors.secondaryPurple,
                 ],
                 onPressed: () {
                   setState(() {
@@ -184,10 +183,7 @@ class _RegisterPageState extends State<RegisterPage> {
       }
 
       if (await authProvider.register(name, email, password, role)) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => VerificationPage()),
-        );
+        Navigator.push(context,MaterialPageRoute(builder: (context) => VerificationPage()));
       }
     }
   }
