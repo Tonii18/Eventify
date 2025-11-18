@@ -1,6 +1,6 @@
 import 'package:eventify/config/theme.dart';
-import 'package:eventify/views/admin/components/user_managment_header.dart';
-import 'package:eventify/views/admin/components/view_users_table.dart';
+import 'package:eventify/views/admin/components/user_list_header.dart';
+import 'package:eventify/views/admin/components/users_list.dart';
 import 'package:flutter/material.dart';
 
 class AdminUserManagment extends StatefulWidget {

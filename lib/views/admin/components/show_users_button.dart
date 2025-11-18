@@ -1,5 +1,5 @@
 import 'package:eventify/config/theme.dart';
-import 'package:eventify/views/admin/admin_user_managment.dart';
+import 'package:eventify/views/admin/admin_user_list.dart';
 import 'package:flutter/material.dart';
 
 class ViewUsersButton extends StatefulWidget {

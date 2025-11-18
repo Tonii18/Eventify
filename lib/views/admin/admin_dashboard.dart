@@ -1,7 +1,7 @@
 import 'package:eventify/config/theme.dart';
 import 'package:eventify/services/auth_service.dart';
-import 'package:eventify/views/admin/components/admin_menu_header.dart';
-import 'package:eventify/views/admin/components/view_users_button.dart';
+import 'package:eventify/views/admin/components/dashboard_header.dart';
+import 'package:eventify/views/admin/components/show_users_button.dart';
 import 'package:eventify/views/login/login_page.dart';
 import 'package:flutter/material.dart';
 

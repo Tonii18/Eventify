@@ -1,5 +1,5 @@
 import 'package:eventify/providers/auth_provider.dart';
-import 'package:eventify/views/admin/admin_menu.dart';
+import 'package:eventify/views/admin/admin_dashboard.dart';
 import 'package:eventify/views/login/login_page.dart';
 import 'package:flutter/material.dart';
 
