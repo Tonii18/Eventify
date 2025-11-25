@@ -1,14 +1,13 @@
 import 'package:eventify/config/theme.dart';
 import 'package:flutter/material.dart';
 
-class CustomeBottomNavigationBar extends StatefulWidget {
-  const CustomeBottomNavigationBar({super.key});
-  
-  @override
-  State<StatefulWidget> createState() => __CustomeBottomNavigationBar();
-}
+class CustomeBottomNavigationBar extends StatelessWidget {
 
-class __CustomeBottomNavigationBar extends State<CustomeBottomNavigationBar> {
+  final int currentIndex;
+  final Function(int) onTap;
+
+  const CustomeBottomNavigationBar({super.key, required this.currentIndex, required this.onTap});
+
   @override
   Widget build(BuildContext context) {
 
@@ -26,11 +25,12 @@ class __CustomeBottomNavigationBar extends State<CustomeBottomNavigationBar> {
           label: 'Eventos',
         ),
       ],
+      currentIndex: currentIndex,
+      onTap: onTap,
       iconSize: 40 * scale,
       backgroundColor: Colors.white,
       selectedItemColor: AppColors.primaryPurple,
       unselectedItemColor: AppColors.lightGrey,
     );
   }
-
 }

@@ -1,6 +1,7 @@
 import 'package:eventify/providers/auth_provider.dart';
 import 'package:eventify/views/admin/admin_dashboard.dart';
 import 'package:eventify/views/users/user_home.dart';
+import 'package:eventify/views/users/user_home_content.dart';
 import 'package:flutter/material.dart';
 
 class LoginFunctions {

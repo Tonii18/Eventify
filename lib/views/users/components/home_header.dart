@@ -1,4 +1,7 @@
 import 'package:eventify/config/theme.dart';
+import 'package:eventify/providers/auth_provider.dart';
+import 'package:eventify/services/auth_service.dart';
+import 'package:eventify/views/login/login_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeader extends StatefulWidget{
@@ -61,7 +64,11 @@ class _HomeHeader extends State<HomeHeader> {
             ),
 
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                AuthService auth = AuthService();
+                auth.logout();
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+              },
               icon: Icon(Icons.logout_rounded),
               color: AppColors.darkBlue,
               iconSize: widget.scale * 40,
