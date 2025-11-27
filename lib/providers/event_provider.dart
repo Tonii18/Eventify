@@ -35,4 +35,6 @@ class EventProvider extends ChangeNotifier {
 
     return _events.isNotEmpty;
   }
+
+  
 }
