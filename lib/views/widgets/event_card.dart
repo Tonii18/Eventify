@@ -40,6 +40,7 @@ class EventCard extends StatelessWidget {
         color: AppColors.white,
         border: Border(
           bottom: BorderSide(
+            width: 3,
             color: Color(
               int.parse(
                 'FF${mapCategoryColor[event.category] ?? '000000'}',

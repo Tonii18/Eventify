@@ -63,21 +63,36 @@ class _UserEvents extends State<UserEvents> {
 
               // Build the carousel
 
-              return CarouselSlider.builder(
-                itemCount: provider.events.length, 
-                itemBuilder: (context, index, realIndex){
-                  final ev = provider.events[index];
-                  return EventCard(event: ev, width: size.width, height: size.height, scale: scale);
-                }, 
-                options: CarouselOptions(
-                  height: MediaQuery.of(context).size.height * 0.55,
-                  enlargeCenterPage: true,
-                  enableInfiniteScroll: false,
-                  viewportFraction: 0.7,
-                )
+              return Column(
+                children: [
+                  Text(
+                    'Explorar',
+                    style: TextStyle(
+                      fontSize: 20 * scale,
+                      fontWeight: FontWeight.w900,
+                      color: AppColors.darkBlue,
+                    ),
+                  ),
+
+                  SizedBox(height: 20 * scale),
+
+                  CarouselSlider.builder(
+                    itemCount: provider.events.length, 
+                    itemBuilder: (context, index, realIndex){
+                      final ev = provider.events[index];
+                      return EventCard(event: ev, width: size.width, height: size.height, scale: scale);
+                    }, 
+                    options: CarouselOptions(
+                      height: MediaQuery.of(context).size.height * 0.55,
+                      enlargeCenterPage: true,
+                      enableInfiniteScroll: false,
+                      viewportFraction: 0.7,
+                    )
+                  ),
+                ],
               );
             },
-          )
+          ),
         ),
 
         floatingActionButton: SpeedDialFab(),
