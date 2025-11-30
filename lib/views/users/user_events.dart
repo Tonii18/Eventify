@@ -10,13 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class UserEvents extends StatefulWidget {
-  final String? categoryFilter;
-  final Function(String?)? onFilterChanged;
-
+  
   const UserEvents({
     super.key,
-    this.categoryFilter,
-    this.onFilterChanged,
   });
 
   @override
